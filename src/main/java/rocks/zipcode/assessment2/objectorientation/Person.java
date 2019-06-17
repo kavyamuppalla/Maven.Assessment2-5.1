@@ -17,9 +17,9 @@ public class Person {
     }
 
     public Person() {
-        this.id = Long.MIN_VALUE;
-        this.address = new Address();
+        this.id = 0L;
         this.name = "";
+        this.address = new Address();
     }
 
     public Long getId() {
@@ -46,6 +46,7 @@ public class Person {
     }
 
     public void setAddress(Address address) {
+        //Person person = new Person();
         this.address = address;
     }
 
