@@ -38,8 +38,11 @@ public class IntegerArrayUtils {
      * @return element located at `indexToFetch`
      */
     public static Integer get(Integer[] integerArray, Integer indexToFetch) {
-
-       return null;
+        Integer a = 0;
+        for (int i = indexToFetch; i < integerArray.length; i++) {
+            a = integerArray[indexToFetch];
+        }
+       return a;
     }
 
     /**
