@@ -10,7 +10,8 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        return null;
+
+        return String.format("%1$"+amountOfPadding+ "s", stringToBePadded);
     }
 
     /**
@@ -19,7 +20,8 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        return null;
+
+        return String.format("%-" + amountOfPadding + "s", stringToBePadded);
     }
 
     /**
@@ -28,7 +30,8 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+
+        return String.format("%0" + numberOfTimeToRepeat+ "d", 0).replace("0", stringToBeRepeated);
     }
 
     /**
@@ -36,7 +39,15 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        char[] charArr = string.toCharArray();
+
+        for(char c : charArr) {
+            if(!Character.isLetter(c)) {
+                return false;
+            }
+        }
+        return true;
+
     }
 
     /**
@@ -44,7 +55,10 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        if(string.contains(string.replaceAll("[*a-zA-Z]", ""))) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -52,6 +66,9 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        if(string.contains(string.replaceAll("[a-zA-Z0-9]+",""))) {
+            return true;
+        }
+        return false;
     }
 }
