@@ -11,7 +11,6 @@ public class Animal {
     private Long id;
     private Person owner;
     public Animal() {
-        this.id = Long.MIN_VALUE;
         this.owner = new Person();
     }
 
@@ -44,6 +43,6 @@ public class Animal {
 
     public Address getAddress() {
 
-        return new Address();
+        return this.owner.getAddress();
     }
 }

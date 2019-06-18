@@ -53,7 +53,7 @@ public class Person {
     @Override
     public boolean equals(Object o) {
         Person person = (Person) o;
-        if(getId().equals(((Person) o).getId()) && getName().equals(((Person) o).getName()) && getAddress().equals(((Person) o).getAddress()) ) {
+        if((getId() == person.getId() || getId().equals(person.getId())) && (getName() == person.getName() || getName().equals(((Person) o).getName())) && getAddress().equals(((Person) o).getAddress()) ) {
             return true;
 
         }

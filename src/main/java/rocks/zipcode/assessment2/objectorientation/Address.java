@@ -12,7 +12,7 @@ public class Address {
 
     public Address() {
         this.addressLine1 = "";
-        this.addressLine1 = "";
+        this.addressLine2 = "";
         this.city = "";
         this.state = "";
         this.zipcode = "";
@@ -32,6 +32,7 @@ public class Address {
     this.addressLine2 = addressLine2;
     this.city = city;
     this.state = state;
+    this.zipcode = zipcode;
     }
 
     public String getAddressLine1() {

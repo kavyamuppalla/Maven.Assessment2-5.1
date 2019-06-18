@@ -12,11 +12,12 @@ public class Inventory {
     /**
      * @param strings list of strings to add / remove / fetch from
      */
-    Map<Integer,String> store;
+    Map<String,Integer> store;
     List<String> strings;
 
     public Inventory(List<String> strings) {
     this.strings = strings;
+        this.store = new HashMap<>();
     }
 
     /**
@@ -31,7 +32,7 @@ public class Inventory {
      * @param item - increment the number of this item in stock by 1
      */
     public void addItemToInventory(String item) {
-        store.put(getItemQuantity(item), item + 1);
+        store.put(item, getItemQuantity(item) + 1);
         return;
     }
 
@@ -40,7 +41,7 @@ public class Inventory {
      */
     public void removeItemFromInventory(String item) {
 
-        store.remove(getItemQuantity(item), item);
+        store.put(item, getItemQuantity(item)-1);
         return;
     }
 
@@ -49,11 +50,10 @@ public class Inventory {
      * @return - return the number of items
      */
     public Integer getItemQuantity(String item) {
-        //return store.get(item);
-        int counter = 0;
-        for (String list : store.values()) {
-            counter += list.length();
+
+        if (store.containsKey(item)) {
+            return store.get(item);
         }
-        return counter;
+        return 0;
     }
 }
